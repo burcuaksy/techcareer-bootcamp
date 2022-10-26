@@ -9,7 +9,7 @@ function UsersAxios(){
     const[loading, setLoading] = useState("");
     const[users, setUsers] = useState("");
     
-    const[name, setName]=useState("");
+    const[name, setName]= useState("");
     const[search, setSearch] = useState("");
 
     useEffect(() => {
@@ -58,7 +58,7 @@ user.name.toLowerCase().includes(search.toLowerCase()));
             <h3>Loading...</h3>
            ) : (
             <ul>
-                {filtered.map((user.key)=>(
+                {filtered.map((user, key)=>(
                     <li className="listItem" key={key}>
                         {user.name}
 

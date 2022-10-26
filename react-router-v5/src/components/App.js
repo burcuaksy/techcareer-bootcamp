@@ -1,5 +1,3 @@
-
-
 import './App.css';
 import{
   BrowserRouter as Router,
@@ -12,12 +10,13 @@ import{
 
 //pages
 import Home from './components/Home';
-import About from './components/About';
-import Users from './components/UserDetail';
+import About from './About';
+import Users from './Users';
+import UserDetail from '/.components/UserDetail';
 import NoMatch from './components/NoMatch';
 
 function App() {
-  const loggedIn=false;
+  const loggedIn = false;
 
   return (
     <Router>
@@ -38,19 +37,18 @@ function App() {
         <Switch>
           <Route path="/"exact component={Home}/>
           <Route path="about">
-          {LoggedIn ?<Redirect to="/users"/> : <About/>}
+          {loggedIn ? <Redirect to="/users"/> : <About/>}
        </Route>
-       <Route path="/users"exact component={Users}/>
+       <Route path="/users" exact component={Users}/>
        <Route path="/users/:id" component={UserDetail}/>
-<Route path="*">
-  <NoMatch/>
-</Route>
+       <Route path="*">
+      <NoMatch/>
+      </Route>
+      </Switch>
 
-        </Switch>
       </div>
     </Router>
-  )
-  ;
+  );
 }
 export default App;
 

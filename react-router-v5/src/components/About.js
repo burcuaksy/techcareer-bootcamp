@@ -1,7 +1,7 @@
 import React from 'react'
 import{useLocation, useHistory} from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
-import UsersAxios from '../../fetching/src/components/UsersAxios';
+import UsersAxios from '../../../fetching/src/components/UsersAxios';
 function useQuery(){
     return new URLSearchParams(useLocation().search);
 
